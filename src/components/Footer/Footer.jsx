@@ -28,10 +28,9 @@ function Footer() {
                 <p><i class="fa-solid fa-arrow-right me-2"></i>Front End Development</p>
                 <p><i class="fa-solid fa-arrow-right me-2"></i>Backend Development</p>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 mb-5">
                 <h4 className='mb-5'>Contact Me</h4>
                 <p><i class="fa-solid fa-location-dot me-3"></i>Enadhi,Kottayam</p>
-                <p><i class="fa-solid fa-phone me-3"></i>+91 9539196717</p>
                 <a href="mailto:aryamolms02@gmail.com" style={{textDecoration:'none',color:'white'}}><i class="fa-solid fa-envelope me-3"></i>aryamolms02@gmail.com</a>
             </div>
         </div>

@@ -4,7 +4,7 @@ import './experience.css';
 function Experience() {
   return (
     <div className='d-flex align-items-center justify-content-center'>
-      <div className='container'>
+      <div className='container mt-5'>
         <h1 className='text-center mb-5'>EXPERIENCE</h1>
         <div className='row'>
           <div className="col-md-8 mx-auto">
