@@ -4,8 +4,8 @@ import aryaImage from '../../images/arya.jpg'
 function About() {
   return (
     <>
-      <div className="container mt-5">
-        <div className="row d-flex flex-column align-items-center">
+      <div className="container mt-5 pt-5">
+        <div className="row d-flex flex-column align-items-center mt-5">
           <div className="col-md-6 mb-3 d-flex align-items-center">
             <img className='w-50 p-3' src={aryaImage} alt="Arya" style={{borderRadius:'50%',marginLeft:'150px',height:'300px'}}/>
           </div>

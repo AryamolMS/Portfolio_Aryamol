@@ -9,8 +9,8 @@ import About from './About'
 function Home() {
   return (
     <>
-    <div className="container mt-5 pt-3 mb-5 pb-5">
-      <div className="row">
+    <div className="container mt-5 pt-5 mb-5 pb-5">
+      <div className="row mb-5 pb-5 mt-5 pt-5">
         <div className="col-md-6">
           <div className="flex-column">
             <h1 style={{fontSize:'40px'}}>Hello,</h1>
@@ -29,7 +29,7 @@ function Home() {
         </div>
       </div>
     </div>
-    <About/>
+    <About />
     <Experience/>
     <Skill/>
     <Projects/>
