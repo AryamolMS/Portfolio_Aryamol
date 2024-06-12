@@ -1,0 +1,17 @@
+.experience-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center the text inside the paragraph */
+    margin: 0 auto; /* Center the paragraph itself */
+    width: 80%; /* Optional: adjust width as needed */
+  }
+  .experience-description {
+    display: block;
+    text-align: justify;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  

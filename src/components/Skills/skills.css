@@ -1,0 +1,21 @@
+.skills_card{
+    width: 150px;
+    height: 200px;
+    background-color: #ffffff18;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.centered {
+    text-align: center;
+  }
+  .skills {
+    flex-grow: 0;
+  }
