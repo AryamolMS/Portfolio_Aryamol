@@ -9,7 +9,7 @@ import About from './About'
 function Home() {
   return (
     <>
-    <div className="container mt-5 pt-3">
+    <div className="container mt-5 pt-3 mb-5 pb-5">
       <div className="row">
         <div className="col-md-6">
           <div className="flex-column">
@@ -24,17 +24,11 @@ function Home() {
         </div>
         <div className="col-md-6">
           <div className="d-flex justify-content-center align-items-center pt-5 mt-5">
-          <button className='btn btn-warning fw-bold w-50'>Download CV <i class="fa-solid fa-download ms-2"></i></button>
+          <a href='https://drive.google.com/file/d/1oQajhHtGrpyn8myyPF8yH0oeMy88p17-/view?usp=sharing' target='blank' className='btn btn-warning fw-bold w-50' >Download CV <i class="fa-solid fa-download ms-2"></i></a>
           </div>
         </div>
       </div>
     </div>
-
-    <About/>
-    <Experience/>
-    <Skill/>
-    <Projects/>
-    <Education/>
     </>
   )
 }
