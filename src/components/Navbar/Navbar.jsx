@@ -39,7 +39,7 @@ function Navbar() {
             </Link>
           ))}
           <a
-            href="https://drive.google.com/file/d/1oQajhHtGrpyn8myyPF8yH0oeMy88p17-/view?usp=sharing"
+           href="https://drive.google.com/file/d/1ZGXYwKk5iKtS0Zpu4qmWd_oe_RAE6QYH/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             className="nav-cv"
