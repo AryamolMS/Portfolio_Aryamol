@@ -2,12 +2,7 @@ import React from 'react';
 import './About.css';
 
 function About() {
-  const traits = [
-    { icon: 'fa-solid fa-code',         label: 'Full-Stack Dev' },
-    { icon: 'fa-solid fa-database',     label: 'MongoDB' },
-    { icon: 'fa-brands fa-react',       label: 'React.js' },
-    { icon: 'fa-brands fa-node-js',     label: 'Node.js' },
-  ];
+ 
 
   return (
     <section className="section about-section" id="about">
