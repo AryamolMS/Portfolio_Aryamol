@@ -1,43 +1,79 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
 function Footer() {
-  return (
-    <>
-    <div className="container mt-5 pt-5">
-        <div className="row">
-            <div className="col-md-3">
-                <h4>About Me</h4>
-                <span className='mt-5'>Passionate MERN stack developer with a knack for crafting user-friendly web experiences. Skilled in building robust applications with React, Node.js, Express.js, and MongoDB. Eager to leverage expertise for innovative solutions and contribute to a collaborative team.</span>
-                <div className='icons d-flex'>
-                    <div style={{width:''}}>
+  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Education'];
+  const services = ['Web Development', 'Frontend Development', 'Backend Development', 'REST API Design'];
 
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-3">
-                <h4 className='mb-3 mt-3'>Links</h4>
-                <p className='fs-5'><i class="fa-solid fa-arrow-right me-2"></i>Home</p>
-                <p className='fs-5'><i class="fa-solid fa-arrow-right me-2"></i>About</p>
-                <p className='fs-5'><i class="fa-solid fa-arrow-right me-2"></i>Skill</p>
-                <p className='fs-5'><i class="fa-solid fa-arrow-right me-2"></i>Project</p>
-            </div>
-            <div className="col-md-3">
-                <h4 className='mb-5'>Services</h4>
-                <p><i class="fa-solid fa-arrow-right me-2"></i>Web Development</p>
-                <p><i class="fa-solid fa-arrow-right me-2"></i>Front End Development</p>
-                <p><i class="fa-solid fa-arrow-right me-2"></i>Backend Development</p>
-            </div>
-            <div className="col-md-3 mb-5">
-                <h4 className='mb-5'>Contact Me</h4>
-                <p><i class="fa-solid fa-location-dot me-3"></i>Enadhi,Kottayam</p>
-                <a href="mailto:aryamolms02@gmail.com" style={{textDecoration:'none',color:'white'}}><i class="fa-solid fa-envelope me-3"></i>aryamolms02@gmail.com</a>
-            </div>
+  return (
+    <footer className="footer">
+      {/* Contact CTA */}
+      <div className="footer-cta">
+        <div className="footer-cta-inner">
+          <div className="footer-cta-orb" />
+          <p className="eyebrow" style={{ textAlign: 'center' }}>Open to opportunities</p>
+          <h2 className="footer-cta-title">
+            Let's build something <em>great together</em>
+          </h2>
+          <p className="footer-cta-sub">
+            Seeking entry-level developer or internship roles. Always open to a good conversation.
+          </p>
+          <div className="footer-cta-links">
+            <a href="mailto:aryamolms02@gmail.com" className="cta-link">
+              <i className="fa-solid fa-envelope" /> aryamolms02@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/aryamol-m-s-074220275/" target="_blank" rel="noreferrer" className="cta-link">
+              <i className="fa-brands fa-linkedin-in" /> LinkedIn
+            </a>
+            <a href="https://github.com/AryamolMS" target="_blank" rel="noreferrer" className="cta-link">
+              <i className="fa-brands fa-github" /> GitHub
+            </a>
+            <a href="tel:+919539196717" className="cta-link">
+              <i className="fa-solid fa-phone" /> +91 95391 96717
+            </a>
+          </div>
         </div>
-    </div>
-    <p className='text-center mt-5'>Copyright © 2024 Aryamol M S | Personal Portfolio. Built with React.</p>
-    </>
-  )
+      </div>
+
+      {/* Footer grid */}
+      <div className="footer-grid-wrap">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <Link to="/" className="footer-logo">AM.</Link>
+            <p className="footer-tagline">
+              Passionate MERN stack developer crafting user-friendly web experiences from Kerala, India.
+            </p>
+            <p className="footer-location">
+              <i className="fa-solid fa-location-dot" /> Kottayam, Kerala
+            </p>
+          </div>
+
+          <div className="footer-col">
+            <h4 className="footer-col-title">Navigation</h4>
+            {navLinks.map((l) => (
+              <Link key={l} to={`/${l.toLowerCase() === 'home' ? '' : l.toLowerCase()}`} className="footer-link">
+                <i className="fa-solid fa-arrow-right" /> {l}
+              </Link>
+            ))}
+          </div>
+
+          <div className="footer-col">
+            <h4 className="footer-col-title">Services</h4>
+            {services.map((s) => (
+              <span key={s} className="footer-service">
+                <i className="fa-solid fa-arrow-right" /> {s}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>© 2024 Aryamol M S · Personal Portfolio · Built with React.</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

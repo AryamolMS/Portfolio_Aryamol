@@ -1,23 +1,53 @@
 import React from 'react';
 import './experience.css';
 
+const experiences = [
+  {
+    id: '01',
+    role: 'MERN Stack Intern',
+    company: 'Luminar Technolab Pvt. Ltd., Kochi',
+    period: 'January 2024 – May 2024',
+    color: 'green',
+    points: [
+      'Gained hands-on experience with the MERN stack by developing and maintaining complex web applications.',
+      'Built RESTful APIs, integrated JWT authentication, and deployed to cloud platforms.',
+      'Sharpened teamwork and communication skills in an agile, collaborative environment.',
+    ],
+  },
+];
+
 function Experience() {
   return (
-    <div className='d-flex align-items-center justify-content-center'>
-      <div className='container mt-5'>
-        <h1 className='text-center mb-5'>EXPERIENCE</h1>
-        <div className='row'>
-          <div className="col-md-8 mx-auto">
-            <h3>MERN Stack Intern</h3>
-            <h5>Luminar Technolab Pvt Ltd, Kochi</h5>
-            <h6 className='text-warning mb-4'>January 2024 - May 2024</h6>
-            <span className='experience-description'>
-              Eager to contribute my foundational programming skills to innovative projects, I leveraged my internship at Luminar Technolab (January 2024 - May 2024) to gain hands-on experience in a collaborative environment. During this time, I honed my abilities with the MERN stack (MongoDB, Express, React, Node.js) by developing and maintaining complex web applications. This internship not only solidified my technical skills but also fostered strong teamwork and communication skills – essential for success in any professional setting. Now, I'm excited to leverage this well-rounded experience in a collaborative environment that fosters continuous learning and professional growth as a developer.
-            </span>
-          </div>
+    <section className="section" id="experience">
+      <div className="section-inner">
+        <p className="eyebrow">Where I've trained</p>
+        <h2 className="section-title">Work <em>experience</em></h2>
+
+        <div className="exp-list">
+          {experiences.map((exp) => (
+            <div key={exp.id} className={`exp-card exp-${exp.color}`}>
+              <div className="exp-number">{exp.id}</div>
+              <div className="exp-body">
+                <div className="exp-header">
+                  <div>
+                    <h3 className="exp-role">{exp.role}</h3>
+                    <p className="exp-company">{exp.company}</p>
+                  </div>
+                  <span className="exp-period">
+                    <i className="fa-regular fa-calendar" /> {exp.period}
+                  </span>
+                </div>
+                <ul className="exp-points">
+                  {exp.points.map((pt, i) => (
+                    <li key={i}>{pt}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

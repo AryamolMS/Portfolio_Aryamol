@@ -1,24 +1,63 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const links = [
+    { to: '/',           label: 'Home' },
+    { to: '/about',      label: 'About' },
+    { to: '/experience', label: 'Experience' },
+    { to: '/skills',     label: 'Skills' },
+    { to: '/education',  label: 'Education' },
+    { to: '/projects',   label: 'Projects' },
+  ];
+
   return (
-    <>
-    <div className='p-4 d-flex container mb-5 pb-5'>
-        <div className="logo">
-            <h4>ARYAMOL M S</h4>
+    <nav className={`navbar-custom ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-inner">
+        <Link to="/" className="nav-logo">AM.</Link>
+
+        <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          {links.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`nav-link ${location.pathname === to ? 'active' : ''}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {label}
+            </Link>
+          ))}
+          <a
+            href="https://drive.google.com/file/d/1oQajhHtGrpyn8myyPF8yH0oeMy88p17-/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="nav-cv"
+          >
+            Resume
+          </a>
         </div>
-        <div className="navigation ms-auto d-flex mt-3">
-            <Link to="/" className='me-5 fs-5 text-decoration-none text-white'>Home</Link>
-            <Link to="/about" className='me-5 fs-5 text-decoration-none text-white'>About</Link>
-            <Link to="/experience" className='me-5 fs-5 text-decoration-none text-white'>Experience</Link>
-            <Link to="/skills" className='me-5 fs-5 text-decoration-none text-white'>Skills</Link>
-            <Link to="/education" className='me-5 fs-5 text-decoration-none text-white'>Education</Link>
-            <Link to="/projects" className='me-5 fs-5 text-decoration-none text-white'>Projects</Link>
-        </div>
-    </div>
-    </>
-  )
+
+        <button
+          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span /><span /><span />
+        </button>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
